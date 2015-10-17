@@ -22,6 +22,9 @@
     "fabfuel/prophiler": "^1.4",
     "zendframework/zend-stratigility": "^1.1"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
   "autoload": {
     "psr-4": {
       "bitExpert\\Http\\Middleware\\Psr7\\Prophiler\\": "src/bitExpert/Http/Middleware/Psr7/Prophiler/"
