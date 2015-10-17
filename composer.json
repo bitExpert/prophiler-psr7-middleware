@@ -19,7 +19,8 @@
   "require": {
     "php": ">=5.5",
     "psr/http-message": "^1.0",
-    "fabfuel/prophiler": "^1.4"
+    "fabfuel/prophiler": "^1.4",
+    "zendframework/zend-stratigility": "^1.1"
   },
   "autoload": {
     "psr-4": {
