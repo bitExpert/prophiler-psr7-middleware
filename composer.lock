@@ -4,9 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d3148bd52cc695fe6de611346d9684f1",
-    "content-hash": "e484542a14bbf277c0b000a14a0ef528",
+    "hash": "e264bace4a0821416b411820e740fc17",
+    "content-hash": "51608d85d1abf40d6fc9a0e0426adffc",
     "packages": [
+        {
+            "name": "bitexpert/slf4psrlog",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bitExpert/slf4psrlog.git",
+                "reference": "469d14a1aa277289244e7c86b26ae12cac69521f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bitExpert/slf4psrlog/zipball/469d14a1aa277289244e7c86b26ae12cac69521f",
+                "reference": "469d14a1aa277289244e7c86b26ae12cac69521f",
+                "shasum": ""
+            },
+            "require": {
+                "psr/log": "^1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "v1.8.1",
+                "mikey179/vfsstream": "v1.5.0",
+                "pdepend/pdepend": "^2.1.0",
+                "phing/phing": "^2.11.0",
+                "phpdocumentor/phpdocumentor": "^2.8.0",
+                "phpmd/phpmd": "^2.2.0",
+                "phpunit/php-code-coverage": "^2.1.0",
+                "phpunit/phpunit": "^4.7.0",
+                "sebastian/finder-facade": "^1.2.0",
+                "sebastian/phpcpd": "^2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "bitExpert\\Slf4PsrLog\\": "src/bitExpert/Slf4PsrLog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stephan Hochdörfer",
+                    "email": "S.Hochdoerfer@bitExpert.de"
+                }
+            ],
+            "description": "Simple Logging Facade for Loggers implementing PSR-3 logging interface.",
+            "time": "2015-07-04 17:10:15"
+        },
         {
             "name": "fabfuel/prophiler",
             "version": "1.4.0",

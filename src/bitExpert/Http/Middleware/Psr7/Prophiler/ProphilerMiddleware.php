@@ -10,6 +10,7 @@
  */
 namespace bitExpert\Http\Middleware\Psr7\Prophiler;
 
+use bitExpert\Slf4PsrLog\LoggerFactory;
 use Fabfuel\Prophiler\Toolbar;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -17,6 +18,10 @@ use Zend\Stratigility\MiddlewareInterface;
 
 class ProphilerMiddleware implements MiddlewareInterface
 {
+    /**
+     * @var \Psr\Log\LoggerInterface the logger instance.
+     */
+    protected $logger;
     /**
      * @var Toolbar
      */
@@ -30,6 +35,7 @@ class ProphilerMiddleware implements MiddlewareInterface
     public function __construct(Toolbar $toolbar)
     {
         $this->toolbar = $toolbar;
+        $this->logger = LoggerFactory::getLogger(__CLASS__);
     }
 
     /**
@@ -42,12 +48,20 @@ class ProphilerMiddleware implements MiddlewareInterface
         }
 
         if (!$response->getBody()->isWritable()) {
+            $this->logger->debug('Response is not writable. Skipping Prophiler toolbar generation.');
             return $response;
         }
 
         $headers = $response->getHeader('Content-Type');
-        if (count($headers) > 0 && $headers[0] === 'text/html') {
+        if (count($headers) === 0) {
+            $this->logger->debug('Content-Type of response not set. Skipping Prophiler toolbar generation.');
+            return $response;
+        }
+
+        if ($headers[0] === 'text/html') {
             $response->getBody()->write($this->toolbar->render());
+        } else {
+            $this->logger->debug('Content-Type of response is not text/html. Skipping Prophiler toolbar generation.');
         }
 
         return $response;

@@ -20,13 +20,15 @@
     "php": ">=5.5",
     "psr/http-message": "^1.0",
     "fabfuel/prophiler": "^1.4",
-    "zendframework/zend-stratigility": "^1.1"
+    "zendframework/zend-stratigility": "^1.1",
+    "bitexpert/slf4psrlog": "^0.1.0"
   },
   "require-dev": {
     "phpunit/php-code-coverage": "^2.1.0",
     "phpunit/phpunit": "^4.8",
     "squizlabs/php_codesniffer": "^2.3",
-    "phpdocumentor/phpdocumentor": "^2.8"
+    "phpdocumentor/phpdocumentor": "^2.8",
+    "monolog/monolog": "^1.14.0",
   },
   "autoload": {
     "psr-4": {
