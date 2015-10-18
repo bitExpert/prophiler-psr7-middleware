@@ -46,10 +46,8 @@ class ProphilerMiddleware implements MiddlewareInterface
         }
 
         $headers = $response->getHeader('Content-Type');
-        if ($headers[0] === 'text/html') {
-            $content = $response->getBody()->getContents();
-            $content .= $this->toolbar->render();
-            $response->getBody()->write($content);
+        if (count($headers) > 0 && $headers[0] === 'text/html') {
+            $response->getBody()->write($this->toolbar->render());
         }
 
         return $response;
