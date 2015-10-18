@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e264bace4a0821416b411820e740fc17",
-    "content-hash": "51608d85d1abf40d6fc9a0e0426adffc",
+    "hash": "4d301561a3d42cfd64b9012b91e35835",
+    "content-hash": "90cf65d6e89c9966a19bbaf53561c6bb",
     "packages": [
         {
             "name": "bitexpert/slf4psrlog",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bitExpert/slf4psrlog.git",
-                "reference": "469d14a1aa277289244e7c86b26ae12cac69521f"
+                "reference": "40408cb83f08738b630f1a90b2824c0a39b619af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bitExpert/slf4psrlog/zipball/469d14a1aa277289244e7c86b26ae12cac69521f",
-                "reference": "469d14a1aa277289244e7c86b26ae12cac69521f",
+                "url": "https://api.github.com/repos/bitExpert/slf4psrlog/zipball/40408cb83f08738b630f1a90b2824c0a39b619af",
+                "reference": "40408cb83f08738b630f1a90b2824c0a39b619af",
                 "shasum": ""
             },
             "require": {
@@ -28,16 +28,11 @@
                 "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "v1.8.1",
-                "mikey179/vfsstream": "v1.5.0",
-                "pdepend/pdepend": "^2.1.0",
-                "phing/phing": "^2.11.0",
                 "phpdocumentor/phpdocumentor": "^2.8.0",
                 "phpmd/phpmd": "^2.2.0",
                 "phpunit/php-code-coverage": "^2.1.0",
                 "phpunit/phpunit": "^4.7.0",
-                "sebastian/finder-facade": "^1.2.0",
-                "sebastian/phpcpd": "^2.0.0"
+                "squizlabs/php_codesniffer": "^2.3"
             },
             "type": "library",
             "autoload": {
@@ -56,7 +51,7 @@
                 }
             ],
             "description": "Simple Logging Facade for Loggers implementing PSR-3 logging interface.",
-            "time": "2015-07-04 17:10:15"
+            "time": "2015-10-18 15:43:07"
         },
         {
             "name": "fabfuel/prophiler",
