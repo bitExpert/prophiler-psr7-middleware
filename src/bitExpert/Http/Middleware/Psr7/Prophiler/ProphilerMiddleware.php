@@ -41,7 +41,7 @@ class ProphilerMiddleware implements MiddlewareInterface
             $response = $out($request, $response);
         }
 
-        if(!$response->getBody()->isWritable()) {
+        if (!$response->getBody()->isWritable()) {
             return $response;
         }
 
