@@ -10,6 +10,7 @@
  */
 namespace bitExpert\Http\Middleware\Psr7\Prophiler;
 
+use bitExpert\Http\Middleware\Psr7\Prophiler\DataCollector\Request;
 use bitExpert\Slf4PsrLog\LoggerFactory;
 use Fabfuel\Prophiler\Toolbar;
 use Psr\Http\Message\ResponseInterface;
@@ -43,6 +44,8 @@ class ProphilerMiddleware implements MiddlewareInterface
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $out = null)
     {
+        $this->toolbar->addDataCollector(new Request($request));
+
         if (null !== $out) {
             $response = $out($request, $response);
         }
