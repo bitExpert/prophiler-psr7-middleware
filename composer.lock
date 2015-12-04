@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cd18ada6f9e2f19c4b633125d7eef7c3",
-    "content-hash": "922d13eb957b868ba9c3097167fc34b2",
+    "hash": "d6815b57e2a236c87f970ef3e1daf228",
+    "content-hash": "c5defcc0d1527c17d2348ce5901f7973",
     "packages": [
         {
             "name": "bitexpert/slf4psrlog",
@@ -293,6 +293,55 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "bitexpert/phing-securitychecker",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bitExpert/phing-securitychecker.git",
+                "reference": "f135525228c0ce9b54e03f5fb5f7e5e408942ff1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bitExpert/phing-securitychecker/zipball/f135525228c0ce9b54e03f5fb5f7e5e408942ff1",
+                "reference": "f135525228c0ce9b54e03f5fb5f7e5e408942ff1",
+                "shasum": ""
+            },
+            "require": {
+                "phing/phing": "^2.8.0",
+                "php": "^5.5|^7.0",
+                "sensiolabs/security-checker": "v3.0.2"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2.8",
+                "phpunit/php-code-coverage": "^2.1.0",
+                "phpunit/phpunit": "^4.8",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "bitExpert\\Phing\\SecurityChecker\\": "src/bitExpert/Phing/SecurityChecker"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stephan Hochdörfer",
+                    "email": "S.Hochdoerfer@bitExpert.de",
+                    "homepage": "http://www.bitExpert.de"
+                }
+            ],
+            "description": "Security Checker Phing Task",
+            "keywords": [
+                "Security Checker",
+                "phing"
+            ],
+            "time": "2015-11-07 19:14:18"
+        },
         {
             "name": "cilex/cilex",
             "version": "1.1.0",
@@ -2513,6 +2562,50 @@
                 "validator"
             ],
             "time": "2015-11-21 02:21:41"
+        },
+        {
+            "name": "sensiolabs/security-checker",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sensiolabs/security-checker.git",
+                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/21696b0daa731064c23cfb694c60a2584a7b6e93",
+                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2.0|~3.0"
+            },
+            "bin": [
+                "security-checker"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SensioLabs\\Security": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien.potencier@gmail.com"
+                }
+            ],
+            "description": "A security checker for your composer.lock",
+            "time": "2015-11-07 08:07:40"
         },
         {
             "name": "squizlabs/php_codesniffer",
