@@ -55,18 +55,20 @@ class ProphilerMiddleware implements MiddlewareInterface
             return $response;
         }
 
-        $headers = $response->getHeader('Content-Type');
-        if (count($headers) === 0) {
-            $this->logger->debug('Content-Type of response not set. Skipping Prophiler toolbar generation.');
+        // Allow any HTML content type
+        $contentType = $response->getHeaderLine('Content-Type');
+        if (!preg_match('#^(?:text/html|application/xhtml\+xml)\s*(?:;|$)#', $contentType)
+        ) {
+            $this->logger->debug('Content-Type of response is not HTML. Skipping Prophiler toolbar generation.');
             return $response;
         }
 
-        if ($headers[0] === 'text/html') {
-            $response->getBody()->write($this->toolbar->render());
-        } else {
-            $this->logger->debug('Content-Type of response is not text/html. Skipping Prophiler toolbar generation.');
+        // We need to be at the end of the stream when writing
+        $body = $response->getBody();
+        if (!$body->eof() && $body->isSeekable()) {
+            $body->seek(0, SEEK_END);
         }
-
+        $body->write($this->toolbar->render());
         return $response;
     }
 }
