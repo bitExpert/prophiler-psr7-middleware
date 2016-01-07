@@ -80,8 +80,8 @@ class ProphilerMiddlewareUnitTest extends \PHPUnit_Framework_TestCase
         $this->body->expects($this->never())
             ->method('write');
         $this->response->expects($this->once())
-            ->method('getHeader')
-            ->will($this->returnValue([]));
+            ->method('getHeaderLine')
+            ->will($this->returnValue(''));
 
         $this->middleware->__invoke($this->request, $this->response);
     }
@@ -97,16 +97,29 @@ class ProphilerMiddlewareUnitTest extends \PHPUnit_Framework_TestCase
         $this->body->expects($this->never())
             ->method('write');
         $this->response->expects($this->once())
-            ->method('getHeader')
-            ->will($this->returnValue(['application/json']));
+            ->method('getHeaderLine')
+            ->will($this->returnValue('application/json'));
 
         $this->middleware->__invoke($this->request, $this->response);
     }
 
+    public function htmlContentTypes()
+    {
+        return [
+            'text/html'                            => ['text/html'],
+            'text/html; charset=utf-8'             => ['text/html; charset=utf-8'],
+            'text/html;charset=utf-8'              => ['text/html;charset=utf-8'],
+            'application/xhtml+xml'                => ['application/xhtml+xml'],
+            'application/xhtml+xml; charset=utf-8' => ['application/xhtml+xml; charset=utf-8'],
+            'application/xhtml+xml;charset=utf-8'  => ['application/xhtml+xml;charset=utf-8'],
+        ];
+    }
+
     /**
      * @test
+     * @dataProvider htmlContentTypes
      */
-    public function toolbarIsAppendedWhenContentTypeIsHtml()
+    public function toolbarIsAppendedWhenContentTypeIsHtml($contentType)
     {
         $this->body->expects($this->once())
             ->method('isWritable')
@@ -114,9 +127,35 @@ class ProphilerMiddlewareUnitTest extends \PHPUnit_Framework_TestCase
         $this->body->expects($this->once())
             ->method('write');
         $this->response->expects($this->once())
-            ->method('getHeader')
-            ->will($this->returnValue(['text/html']));
+            ->method('getHeaderLine')
+            ->will($this->returnValue($contentType));
 
         $this->middleware->__invoke($this->request, $this->response);
+    }
+
+    public function seeksToTheBodyEOFPriorToWriting()
+    {
+        $this->body->expects($this->once())
+            ->method('isWritable')
+            ->will($this->returnValue(true));
+        $this->body->expects($this->once())
+            ->method('eof')
+            ->will($this->returnValue(false));
+        $this->body->expects($this->once())
+            ->method('isSeekable')
+            ->will($this->returnValue(true));
+        $this->body->expects($this->once())
+            ->method('seek')
+            ->with($this->equalTo(0), $this->equalTo(SEEK_END))
+            ->will($this->returnValue(true));
+        $this->body->expects($this->once())
+            ->method('write');
+        $this->response->expects($this->once())
+            ->method('getHeaderLine')
+            ->will($this->returnValue('text/html'));
+
+
+        $this->middleware->__invoke($this->request, $this->response);
+        
     }
 }
