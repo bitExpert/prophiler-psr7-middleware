@@ -20,6 +20,24 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
+## 0.2.1
+
+### Added
+
+-  [#7](https://github.com/bitExpert/prophiler-psr7-middleware/pull/7) Fix issues observed when composing into PSR-7 app 
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.2.0
 
 ### Added
