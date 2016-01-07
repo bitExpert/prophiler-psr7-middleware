@@ -40,6 +40,8 @@ Add the ProphilerMiddleware to the Middleware pipe:
 ```php
     $response = $app($request, $response);
 ```
+To use the ProphilerMiddleware in a [Zend Expressive](https://github.com/zendframework/zend-expressive) application 
+follow [this guide](https://blog.bitexpert.de/blog/using-prophiler-with-zend-expressive/).
 
 License
 -------
