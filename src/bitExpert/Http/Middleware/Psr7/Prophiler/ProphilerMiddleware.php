@@ -57,7 +57,7 @@ class ProphilerMiddleware implements MiddlewareInterface
 
         // Allow any HTML content type
         $contentType = $response->getHeaderLine('Content-Type');
-        if (!preg_match('#^(?:text/html|application/xhtml\+xml)\s*(?:;|$)#', $contentType)
+        if ($contentType && !preg_match('#^(?:text/html|application/xhtml\+xml)\s*(?:;|$)#', $contentType)
         ) {
             $this->logger->debug('Content-Type of response is not HTML. Skipping Prophiler toolbar generation.');
             return $response;
