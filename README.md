@@ -5,7 +5,8 @@ middleware is responsible for "adding" the Prophiler Toolbar output to the Respo
 Installation
 ------------
 
-The preferred way of installation is through Composer. Simply add `bitexpert/prophiler-psr7-middleware` as a dependency:
+The preferred way of installing `bitexpert/prophiler-psr7-middleware` is through Composer. Simply add 
+`bitexpert/prophiler-psr7-middleware` as a dependency:
 
 ```
 composer.phar require bitexpert/prophiler-psr7-middleware
