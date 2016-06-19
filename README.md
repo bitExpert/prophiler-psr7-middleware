@@ -2,6 +2,9 @@
 This package provides a slim PSR-7 middleware implementation based on the zendframework/zend-stratigility package. The
 middleware is responsible for "adding" the Prophiler Toolbar output to the Response object.
 
+[![Build Status](https://travis-ci.org/bitExpert/prophiler-psr7-middleware.svg?branch=master)](https://travis-ci.org/bitExpert/prophiler-psr7-middleware)
+[![Dependency Status](https://www.versioneye.com/user/projects/5750a1a191bfda0044c0e84c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5750a1a191bfda0044c0e84c)
+
 Installation
 ------------
 
