@@ -6,13 +6,12 @@ matrix:
     - php: 5.6
     - php: 7.0
     - php: hhvm
-  allow_failures:
-    - php: 7.0
-    - php: hhvm
 
 before_script:
   - composer self-update
-  - composer install --prefer-source
+  # temp. fix to install the "correct" prophiler version depending on the active PHP version! Can be
+  # removed when PHP 7 support finally lands in prophiler.
+  - composer update fabfuel/prophiler --prefer-source
 
 script:
     - composer validate
