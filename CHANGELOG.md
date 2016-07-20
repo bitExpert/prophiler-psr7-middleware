@@ -2,11 +2,30 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 0.3.0 - TDB
+## 0.4.0 - TDB
+
+### Added
+
+-  Nothing
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 0.3.0
 
 ### Added
 
 -  [#5](https://github.com/bitExpert/prophiler-psr7-middleware/pull/5) Ported bitExpert internal Phing setup over to the prophiler-psr7-middleware package 
+-  [#11](https://github.com/bitExpert/prophiler-psr7-middleware/issues/11) Problems with dependency to fabfuel/prophiler
 
 ### Deprecated
 
