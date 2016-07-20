@@ -154,8 +154,6 @@ class ProphilerMiddlewareUnitTest extends \PHPUnit_Framework_TestCase
             ->method('getHeaderLine')
             ->will($this->returnValue('text/html'));
 
-
         $this->middleware->__invoke($this->request, $this->response);
-        
     }
 }
