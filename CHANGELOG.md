@@ -2,11 +2,12 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 0.4.0 - TDB
+## 0.4.0
 
 ### Added
 
--  Nothing
+-  [#15](https://github.com/bitExpert/prophiler-psr7-middleware/pull/15) Upgrade Stratigility dependency to version 2.x
+-  [#13](https://github.com/bitExpert/prophiler-psr7-middleware/pull/13) Add contributing guide
 
 ### Deprecated
 
