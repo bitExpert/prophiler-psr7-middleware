@@ -5,15 +5,22 @@ matrix:
     - php: 5.6
     - php: 7.0
     - php: 7.1
+      env:
+        - TEST_COVERAGE=true
 
 before_script:
   - composer self-update
   # temp. fix to install the "correct" prophiler version depending on the active PHP version! Can be
   # removed when PHP 7 support finally lands in prophiler.
   - composer update fabfuel/prophiler --prefer-source
+  - if [[ $TEST_COVERAGE == 'true' ]]; then travis_retry composer require --dev satooshi/php-coveralls ; fi
 
 script:
     - composer validate
     - ./vendor/bin/phing security:check
-    - ./vendor/bin/phing sniff
-    - ./vendor/bin/phing unit
+    - if [[ $TEST_COVERAGE == 'true' ]]; then ./vendor/bin/phing unit-with-coverage ; fi
+    - if [[ $TEST_COVERAGE != 'true' ]]; then ./vendor/bin/phing unit ; fi
+
+after_script:
+    - if [[ $TEST_COVERAGE == 'true' ]]; then ./vendor/bin/coveralls -v ; fi
+
