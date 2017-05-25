@@ -12,7 +12,7 @@ before_script:
   - composer self-update
   # temp. fix to install the "correct" prophiler version depending on the active PHP version! Can be
   # removed when PHP 7 support finally lands in prophiler.
-  - composer update fabfuel/prophiler --prefer-source
+  #- composer update fabfuel/prophiler --prefer-source
   - if [[ $TEST_COVERAGE == 'true' ]]; then travis_retry composer require --dev satooshi/php-coveralls ; fi
 
 script:
