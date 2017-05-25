@@ -27,6 +27,7 @@
     "squizlabs/php_codesniffer": "^2.3",
     "phpdocumentor/phpdocumentor": "^2.8",
     "phing/phing": "^2.8.0",
+    "composer/ca-bundle": "^1.0",
     "bitexpert/phing-securitychecker": "^0.2.1",
     "monolog/monolog": "^1.14.0"
   },

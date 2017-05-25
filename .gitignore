@@ -1,4 +1,5 @@
 build/apidoc
+composer.lock
 vendor/
 .idea
 
