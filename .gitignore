@@ -1,2 +1,5 @@
 build/apidoc
+vendor/
+.idea
+
 
