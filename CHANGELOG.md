@@ -6,6 +6,27 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
+-  [#20](https://github.com/bitExpert/prophiler-psr7-middleware/pull/20) Update bitexpert/phing-securitychecker dep due to Travis problem with SSL
+-  [#19](https://github.com/bitExpert/prophiler-psr7-middleware/pull/19) Update docs to refelect the changes of Expressive 2.x
+-  [#18](https://github.com/bitExpert/prophiler-psr7-middleware/pull/18) Fix issue with php7
+-  [#16](https://github.com/bitExpert/prophiler-psr7-middleware/pull/16) Enable coveralls support
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 0.4.0
+
+### Added
+
 -  [#15](https://github.com/bitExpert/prophiler-psr7-middleware/pull/15) Upgrade Stratigility dependency to version 2.x
 -  [#13](https://github.com/bitExpert/prophiler-psr7-middleware/pull/13) Add contributing guide
 
