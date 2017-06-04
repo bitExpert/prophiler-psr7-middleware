@@ -15,9 +15,9 @@ The preferred way of installing `bitexpert/prophiler-psr7-middleware` is through
 composer.phar require bitexpert/prophiler-psr7-middleware
 ```
 
-## How to use it
+## How to use the Prophiler PSR7 Middleware
 
-Create Prophiler toolbar:
+Create the Prophiler toolbar:
 
 ```php
     $prophiler = new \Fabfuel\Prophiler\Profiler();
@@ -38,13 +38,14 @@ Add the ProphilerMiddleware to the Middleware pipe:
 ```php
     $app->pipe(new \bitExpert\Http\Middleware\Psr7\Prophiler\ProphilerMiddleware($toolbar));
 ```
+
 "Execute" the Middleware pipe:
 
 ```php
     $response = $app($request, $response);
 ```
 
-## How to configure Prophiler PSR7 Middleware in Expressive
+## How to add the Prophiler PSR7 Middleware to an Expressive app
 
 ### Expressive 1.x
 
@@ -97,15 +98,13 @@ class ProphilerFactory
 
 ### Expressive 2.x (Programmatic Pipelines)
 
-Adding them in the `config/pipeline.php` file:
+Adding the following code snippet to the `config/pipeline.php` file:
 
 ```php
 $app->pipe(ErrorHandler::class);
-//... just after the ErrorHandler::class (must be the first one)
 
 $debug = $app->getContainer()->get('config')['debug'] ?? false;
 if ($debug) {
-   /* example with prophilermiddleware */
    $prophiler  = new \Fabfuel\Prophiler\Profiler();
    $toolbar    = new \Fabfuel\Prophiler\Toolbar($prophiler);
    $middleware = new \bitExpert\Http\Middleware\Psr7\Prophiler\ProphilerMiddleware($toolbar);
@@ -113,8 +112,23 @@ if ($debug) {
 }
 
 $app->pipe(ServerUrlMiddleware::class);
-//... the rest of the pipeline
 ```
+
+## Configure Prophiler
+
+By default Prophiler will not log or profile anything. You can add custom benchmarks by adding
+the following code snippet to the code you want to profile:
+
+```php
+$profiler->start('\My\Class::doSomeOtherThing', ['additional' => 'information'], 'My Component');
+
+// here be your custom code
+
+$profiler->stop();
+```
+
+In addition to that Prophiler offers a lot of [adapters and decorators](https://github.com/fabfuel/prophiler#adapters-and-decorators) 
+for 3rd party tools and libraries.
 
 ## License
 
