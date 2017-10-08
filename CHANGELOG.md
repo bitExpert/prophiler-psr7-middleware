@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.6.0
+
+### Added
+
+-  Nothing
+
+### Deprecated
+
+-  [#21](https://github.com/bitExpert/prophiler-psr7-middleware/pull/21) Update fabfuel/prophiler to version 1.6
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.5.0
 
 ### Added
