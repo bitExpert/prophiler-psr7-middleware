@@ -3,7 +3,6 @@ This package provides a slim PSR-7 middleware implementation based on the zendfr
 middleware is responsible for "adding" the Prophiler Toolbar output to the Response object.
 
 [![Build Status](https://travis-ci.org/bitExpert/prophiler-psr7-middleware.svg?branch=master)](https://travis-ci.org/bitExpert/prophiler-psr7-middleware)
-[![Dependency Status](https://www.versioneye.com/user/projects/57d9b52c712966004c0191a1/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57d9b52c712966004c0191a1)
 [![Coverage Status](https://coveralls.io/repos/github/bitExpert/prophiler-psr7-middleware/badge.svg?branch=master)](https://coveralls.io/github/bitExpert/prophiler-psr7-middleware?branch=master)
 
 ## Installation
